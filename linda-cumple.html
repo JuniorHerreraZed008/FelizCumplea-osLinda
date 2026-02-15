@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños Linda! 🎉</title>
+    <link rel="stylesheet" href="linda-cumple.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Canvas de confeti -->
+    <canvas id="confettiCanvas"></canvas>
+    
+    <!-- Globos flotantes -->
+    <div id="balloonsContainer"></div>
+
+    <!-- Contenedor principal -->
+    <div class="main-container">
+        
+        <!-- Pantalla 1: Intro Sorpresa -->
+        <section class="screen active" id="screen1">
+            <div class="gift-box-intro" id="giftBox">
+                <div class="gift-lid">🎁</div>
+                <div class="gift-message">Toca para abrir</div>
+            </div>
+        </section>
+
+        <!-- Pantalla 2: Mensaje Principal -->
+        <section class="screen" id="screen2">
+            <div class="birthday-card">
+                <div class="sparkles">✨</div>
+                <h1 class="main-title">
+                    ¡Feliz Cumpleaños<br>
+                    <span class="name-highlight">Linda!</span>
+                </h1>
+                <div class="cake-interactive" id="cake">
+                    <div class="cake-layer layer-3">
+                        <div class="candle">🕯️</div>
+                        <div class="candle">🕯️</div>
+                        <div class="candle">🕯️</div>
+                    </div>
+                    <div class="cake-layer layer-2"></div>
+                    <div class="cake-layer layer-1"></div>
+                </div>
+                <p class="subtitle">Hoy es tu día especial 🎂</p>
+                <button class="next-btn" onclick="goToScreen(3)">
+                    Continuar →
+                </button>
+            </div>
+        </section>
+
+        <!-- Pantalla 3: Elogios Interactivos -->
+        <section class="screen" id="screen3">
+            <div class="compliments-section">
+                <h2 class="section-title">Eres increíble porque...</h2>
+                <div class="compliments-grid">
+                    <div class="compliment-card" data-emoji="🌟">
+                        <div class="card-front">
+                            <div class="card-emoji">🌟</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Iluminas cada lugar con tu presencia</p>
+                        </div>
+                    </div>
+                    <div class="compliment-card" data-emoji="💖">
+                        <div class="card-front">
+                            <div class="card-emoji">💖</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Tu belleza interior y exterior es única</p>
+                        </div>
+                    </div>
+                    <div class="compliment-card" data-emoji="✨">
+                        <div class="card-front">
+                            <div class="card-emoji">✨</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Tu sonrisa alegra cualquier día</p>
+                        </div>
+                    </div>
+                    <div class="compliment-card" data-emoji="🌺">
+                        <div class="card-front">
+                            <div class="card-emoji">🌺</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Eres una persona extraordinaria</p>
+                        </div>
+                    </div>
+                    <div class="compliment-card" data-emoji="🎨">
+                        <div class="card-front">
+                            <div class="card-emoji">🎨</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Tu creatividad inspira a todos</p>
+                        </div>
+                    </div>
+                    <div class="compliment-card" data-emoji="🦋">
+                        <div class="card-front">
+                            <div class="card-emoji">🦋</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Tu espíritu libre es admirable</p>
+                        </div>
+                    </div>
+                    <div class="compliment-card" data-emoji="🌈">
+                        <div class="card-front">
+                            <div class="card-emoji">🌈</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Llenas de color la vida de los demás</p>
+                        </div>
+                    </div>
+                    <div class="compliment-card" data-emoji="💎">
+                        <div class="card-front">
+                            <div class="card-emoji">💎</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Eres valiosa como una joya preciosa</p>
+                        </div>
+                    </div>
+                    <div class="compliment-card" data-emoji="🌸">
+                        <div class="card-front">
+                            <div class="card-emoji">🌸</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Tu dulzura y ternura son incomparables</p>
+                        </div>
+                    </div>
+                    <div class="compliment-card" data-emoji="⭐">
+                        <div class="card-front">
+                            <div class="card-emoji">⭐</div>
+                            <p>Toca aquí</p>
+                        </div>
+                        <div class="card-back">
+                            <p>Brillas con luz propia siempre</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="next-btn" onclick="goToScreen(4)">
+                    Continuar →
+                </button>
+            </div>
+        </section>
+
+        <!-- Pantalla 4: Mensaje Final -->
+        <section class="screen" id="screen4">
+            <div class="final-section">
+                <div class="hearts-rain" id="heartsRain"></div>
+                <div class="final-card">
+                    <h2 class="final-title">Linda</h2>
+                    <div class="final-message">
+                        <p class="message-line">Que este nuevo año de vida esté lleno de:</p>
+                        <ul class="wishes-list">
+                            <li>💫 Sueños cumplidos</li>
+                            <li>✨ Momentos mágicos</li>
+                            <li>🌟 Éxitos brillantes</li>
+                            <li>💖 Amor abundante</li>
+                            <li>😊 Sonrisas infinitas</li>
+                            <li>🎯 Metas alcanzadas</li>
+                        </ul>
+                        <p class="final-note">
+                            Eres una mujer increíble, hermosa por dentro y por fuera.
+                            <br><br>
+                            <strong>¡Que tengas el mejor cumpleaños de todos! 🎉</strong>
+                        </p>
+                    </div>
+                    <button class="celebrate-btn" id="celebrateBtn">
+                        🎊 ¡Celebrar! 🎊
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Botón de música -->
+    <button class="music-btn" id="musicBtn">
+        <span class="music-icon">🎵</span>
+    </button>
+
+    <!-- Audio -->
+    <audio id="birthdayMusic" loop>
+        <source src="https://raw.githubusercontent.com/JuniorHerreraZed008/doc/0a8f278ddb94df6a1eefd1cbb7308e73b63bc572/FELIZ%20CUMPLEA%C3%91OS%20ORIGINAL%20-%20Versi%C3%B3n%20en%20espa%C3%B1ol.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="linda-cumple.js"></script>
+</body>
+</html>
